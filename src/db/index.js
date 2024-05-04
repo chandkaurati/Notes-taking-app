@@ -16,7 +16,7 @@ const  conntectDB = async()=>{
 
         console.log(`MONGODB CONNECTION ERROR:${error}`)
         process.exit(1)
-      //read about the process the exit
+        //read about the process the exit
 
      }
 }  
