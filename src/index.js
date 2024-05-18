@@ -1,9 +1,9 @@
 import conntectDB from "./db/index.js";
 import dotenv  from 'dotenv'
 import { app } from "./app.js";
-dotenv.config({
-path: "./env"
-})
+// dotenv.config({
+// path: "./env"
+// })
 
 conntectDB()
 .then(()=>{
