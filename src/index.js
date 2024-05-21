@@ -19,6 +19,16 @@ conntectDB()
     console.log("MONGO connetion failed", err)
 })
 
+app.get('/', (req,res)=>{
+    res.send("app is running")
+})
+
+app.post('/login',(req,res)=>{
+    res.status(200).json({
+     message : "Ok"
+    })
+})
+
 // const app = express()
 
 // ;(async()=>{
