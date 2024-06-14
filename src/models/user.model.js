@@ -31,24 +31,24 @@ const userSchema  = new Schema(
          unique : true,
          trim  : true, 
     },
-     Fullname:{
+    Fullname:{
          type : String,
          required : true,
          trim  : true,
          index : true
     },
-     avatar:{
+    avatar:{
          type : String,
          required : true,
     },
-     coverImage:{
+    coverImage:{
          type : String,
     },
-     password:{
+    password:{
          type : String,
          required : [true, "password id reqired "],
     },
-     refrestToken:{
+    refrestToken:{
          type : String,
     },
 
