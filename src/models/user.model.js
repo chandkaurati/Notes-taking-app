@@ -1,4 +1,4 @@
-import mongoose,{Schema} from "mongoose";
+ import mongoose,{Schema} from "mongoose";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
@@ -17,7 +17,7 @@ const userSchema  = new Schema(
     }
 ],
 
-    userName:{
+    username:{
      type : String,
      required : true,
       unique : true,
@@ -31,7 +31,7 @@ const userSchema  = new Schema(
          unique : true,
          trim  : true, 
     },
-    Fullname:{
+    fullname:{
          type : String,
          required : true,
          trim  : true,
@@ -55,7 +55,7 @@ const userSchema  = new Schema(
 
     },
     {
-       timestamps : true
+       timestamps : true  
     }
 
 )
@@ -69,7 +69,8 @@ userSchema.pre("save",  async function(next){
 
 userSchema.methods.isPasswordCorrect = async function(password){
   // it will returns boolean value true false if  password is correct
- return await bcrypt.compare(password, this.password)
+return await bcrypt.compare(password, this.password)
+
 } 
 
 userSchema.methods.generateAccessToken =  function(){
@@ -77,7 +78,7 @@ userSchema.methods.generateAccessToken =  function(){
     {
         _id: this.id,
         email: this.email,
-        username: this.userName,
+        username: this.username,
         fullname : this.fullname
     },
     process.env.ACCESS_TOKEN_SECRET,
